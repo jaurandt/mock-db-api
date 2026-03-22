@@ -1,1 +1,1 @@
-Created as a Maven project to do some database testing!
+mock-db-api is a lightweight in-memory REST API built with Java and Spark. It simulates a simple database with full CRUD support — create, read, update, and delete records over HTTP. Useful as a mock backend for testing clients, learning REST concepts, or prototyping without a real database.
