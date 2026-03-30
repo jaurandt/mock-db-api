@@ -49,60 +49,61 @@ To stop the server, press `Ctrl+C`.
 
 **List all records**
 
-bash:
 ```bash
+# Bash
 curl http://localhost:4567/records
 ```
-PowerShell:
+
 ```powershell
+# PowerShell
 Invoke-RestMethod -Uri http://localhost:4567/records
 ```
 
 **Get a single record**
 
-bash:
 ```bash
+# Bash
 curl http://localhost:4567/records/1
 ```
-PowerShell:
 ```powershell
+# PowerShell
 Invoke-RestMethod -Uri http://localhost:4567/records/1
 ```
 
 **Create a record**
 
-bash:
 ```bash
+# Bash
 curl -X POST http://localhost:4567/records \
   -H "Content-Type: application/json" \
   -d '{"name": "my-record", "value": "hello world"}'
 ```
-PowerShell:
 ```powershell
+# PowerShell
 Invoke-RestMethod -Uri http://localhost:4567/records -Method POST -ContentType "application/json" -Body '{"name": "my-record", "value": "hello world"}'
 ```
 
 **Update a record**
 
-bash:
 ```bash
+# Bash
 curl -X PUT http://localhost:4567/records/1 \
   -H "Content-Type: application/json" \
   -d '{"name": "updated-name", "value": "new value"}'
 ```
-PowerShell:
 ```powershell
+# PowerShell
 Invoke-RestMethod -Uri http://localhost:4567/records/1 -Method PUT -ContentType "application/json" -Body '{"name": "updated-name", "value": "new value"}'
 ```
 
 **Delete a record**
 
-bash:
 ```bash
+# Bash
 curl -X DELETE http://localhost:4567/records/1
 ```
-PowerShell:
 ```powershell
+# PowerShell
 Invoke-RestMethod -Uri http://localhost:4567/records/1 -Method DELETE
 ```
 
