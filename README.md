@@ -45,33 +45,65 @@ To stop the server, press `Ctrl+C`.
 
 ## Examples
 
+> **Windows PowerShell users:** `curl` is an alias for `Invoke-RestMethod` in PowerShell and does not support the same flags. Use the PowerShell commands below instead.
+
 **List all records**
+
+bash:
 ```bash
 curl http://localhost:4567/records
 ```
+PowerShell:
+```powershell
+Invoke-RestMethod -Uri http://localhost:4567/records
+```
 
 **Get a single record**
+
+bash:
 ```bash
 curl http://localhost:4567/records/1
 ```
+PowerShell:
+```powershell
+Invoke-RestMethod -Uri http://localhost:4567/records/1
+```
 
 **Create a record**
+
+bash:
 ```bash
 curl -X POST http://localhost:4567/records \
   -H "Content-Type: application/json" \
   -d '{"name": "my-record", "value": "hello world"}'
 ```
+PowerShell:
+```powershell
+Invoke-RestMethod -Uri http://localhost:4567/records -Method POST -ContentType "application/json" -Body '{"name": "my-record", "value": "hello world"}'
+```
 
 **Update a record**
+
+bash:
 ```bash
 curl -X PUT http://localhost:4567/records/1 \
   -H "Content-Type: application/json" \
   -d '{"name": "updated-name", "value": "new value"}'
 ```
+PowerShell:
+```powershell
+Invoke-RestMethod -Uri http://localhost:4567/records/1 -Method PUT -ContentType "application/json" -Body '{"name": "updated-name", "value": "new value"}'
+```
 
 **Delete a record**
+
+bash:
 ```bash
 curl -X DELETE http://localhost:4567/records/1
+```
+PowerShell:
+```powershell
+Invoke-RestMethod -Uri http://localhost:4567/records/1 -Method DELETE
 ```
 
 ---
